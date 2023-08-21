@@ -1,187 +1,220 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <style>
-    body {
-      font-family: Arial, sans-serif;
-      margin: 0;
-      padding: 0;
-      background-color: #f4f4f4;
-    }
-    
-    header {
-      background-color: #333;
-      color: white;
-      text-align: center;
-      padding: 1rem 0;
-    }
-    
-    main {
-      display: flex;
-      flex-wrap: wrap;
-      justify-content: center;
-      padding: 2rem;
-    }
-    
-    .item {
-      background-color: #fff;
-      border: 1px solid #ccc;
-      border-radius: 5px;
-      margin: 1rem;
-      padding: 1rem;
-      width: 300px;
-      box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.1);
-    }
-    
-    .item h2 {
-      font-size: 1.5rem;
-      margin-bottom: 0.5rem;
-    }
-    
-    .item img {
-      max-width: 100%;
-      height: auto;
-      margin-bottom: 0.5rem;
-    }
-    
-    .item .description {
-      font-style: italic;
-      color: #777;
-      margin-bottom: 0.5rem;
-    }
-    
-    .item .options,
-    .item .quantity,
-    .item .ingredients,
-    .item .usage {
-      color: #525;
-      margin-bottom: 0.5rem;
-    }
-    
-    .item .price {
-      font-weight: bold;
-      font-size: 1.2rem;
-      color: #ff6600;
-    }
-    
-    footer {
-      background-color: #333;
-      color: white;
-      text-align: center;
-      padding: 1rem 0;
-    }
-    
-    .bio {
-      margin-top: 2rem;
-      padding: 1rem;
-      background-color: #fff;
-      border: 1px solid #ccc;
-      border-radius: 5px;
-      box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.1);
-    }
-    
-    .bio h2 {
-      font-size: 1.5rem;
-      margin-bottom: 1rem;
-    }
-    
-    .bio ol {
-      padding-left: 1.5rem;
-      margin-bottom: 1rem;
-    }
-    
-    .bio p {
-      margin-bottom: 0.5rem;
-    }
-    
-    .bio strong {
-      color: #ff6600;
-    }
-    
-    /* Additional Japanese Elements */
-    .sakura {
-      position: fixed;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      pointer-events: none;
-      z-index: -1;
-      background: url('sakura.png') center/cover no-repeat;
-      animation: sakuraFall 15s linear infinite;
-    }
-    
-    @keyframes sakuraFall {
-      0% {
-        transform: translateY(-10%);
-      }
-      100% {
-        transform: translateY(110%);
-      }
-    }
-  </style>
-  <title>SMU Japan Produce Store</title>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css"> <!-- Link to your CSS file -->
+    <style>
+        /* Your inline CSS styles here */
+        /* Added CSS for displaying three items in a row */
+
+        body {
+            background-image: url('https://wallpaperaccess.com/full/1949512.jpg'); /* Set the background image */
+            background-size: cover; /* Cover the entire viewport */
+            background-repeat: no-repeat; /* Prevent image repetition */
+            background-position: center center; /* Center the background image */
+            margin: 0; /* Remove default body margin */
+            font-family: Arial, sans-serif; /* Set the font family */
+        }
+
+        
+        h1, h2, p, ul, li {
+           font-family: cursive, "Comic Sans MS", sans-serif; /* Set the "Courier" font family */
+        }
+
+        main {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            align-items: stretch; /* Align items to stretch vertically */
+            padding: 2rem;
+        }
+        .product {
+            background-color: #ffffff; /* Cream color */
+            border: 3px solid #f4efc5;
+            border-radius: 5px;
+            padding: 1rem;
+            margin: 1rem;
+            flex-basis: calc(33.33% - 1rem);
+            box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.1);
+            text-align: center;
+            flex: 0 0 calc(33.33% - 2rem);
+            margin: 1rem;
+            display: flex;
+            flex-direction: column;
+            height: 250px;
+        }
+        
+        /* Adjusted product img and description styles */
+        .product-box {
+            height: 300px; /* Set a fixed height for the product box */
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+        }
+
+        .product-box img {
+            max-width: 100%;
+            width: 360px; /* Set a specific width for the images */
+            height: 170px; /* Set a specific height for the images */
+            margin: 0 auto;
+            object-fit: cover;
+        }
+        .product h2 {
+            font-size: 1.2rem;
+            margin-bottom: 0.5rem;
+            font-family: serif;
+        }
+        .product .price {
+            font-weight: bold;
+            color: #010101;
+            font-family: sans-serif;
+        }
+        /* Reset some default styles */
+        body, h1, h2, p, ul, li {
+            margin: 0;
+            padding: 0;
+        }
+        /* Header */
+        header {
+            background-color: #ebd7c2;
+            color: rgba(251, 251, 251, 0.86);
+            text-align: center;
+            padding: 1rem 0;
+        }
+        /* Navigation */
+        nav ul {
+            list-style: none;
+        }
+        nav ul li {
+            display: inline;
+            margin-right: 1rem;
+        }
+        nav a {
+            text-decoration: none;
+            color: white;
+        }
+        /* Footer */
+        footer {
+            background-color: #ebd7c2;
+            color: rgba(251, 251, 251, 0.86);
+            text-align: center;
+            padding: 1rem 0;
+        }
+
+        .product:hover {
+            transform: scale(1.05); /* Scale up the product on hover */
+            box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2); /* Add shadow on hover */
+        }
+
+    </style>
+    <title>Shoe Store</title>
 </head>
 <body>
-  <div class="sakura"></div>
-  <header>
-    <h1>Welcome to SMU Japan Produce Store</h1>
-    <p>Your one-stop shop for authentic Japanese food items!</p>
-  </header>
-  <main>
-    <div class="item">
-      <img src="https://azumafoods.ca/wp-content/uploads/2022/04/prdcts_apptz_takowsb_01.png" alt="Tako Wasabu">
-      <h2>Tako Wasabu</h2>
-      <p class="description">Tako with Wasabi (Halal)</p>
-      <p class="options">Options: Boiled or Raw</p>
-      <p class="quantity">500gm/tub</p>
-      <p class="ingredients">Ingredients: Octopus, wasabi, tribute vegetable, nozawa</p>
-      <p class="usage">Used for: Tapas, Sushi, Chazuke, Snacks to go with drinks</p>
-      <p class="price">$40.10</p>
-    </div>
-    <div class="item">
-      <img src="https://www.coles.com.au/content/dam/coles/inspire-create/april22-images/Apr22-bbq-scallops-with-chilli-and-garlic-butter-976x549.jpg" alt="Hokkaido Grilled Scallops">
-      <h2>Hokkaido Grilled Scallops</h2>
-      <p class="description">If You Occasionally Want To Eat Seafood To Relieve Your Cravings, You Must Not Miss It😋</p>
-      <p class="price">$16</p>
-    </div>
-    <div class="item">
-      <img src="https://img.ws.mms.shopee.sg/sg-11134207-23020-h508lcc1urnve3" alt="Yumimaru Sashimi Shoyuzuke (Salmon, Ebi)">
-      <h2>Yumimaru Sashimi Shoyuzuke (Salmon, Ebi)</h2>
-      <p class="description">All zukes are made with the best ingredients we could source: Slices of premium sashimi-grade Norwegian Salmon and sweet prawns marinated in a delightful mix of sauces.</p>
-      <p class="price">$22.34</p>
-    </div>
-    <div class="item">
-      <img src="https://www.tastingtable.com/img/gallery/the-real-reason-its-perfectly-okay-to-buy-frozen-tuna/l-intro-1660834565.jpg" alt="Frozen Tuna Steak">
-      <h2>Frozen Tuna Steak</h2>
-      <p class="description">Tuna Saku is one of our most popular items due to a minimal percentage of muscle fiber, offering a consistently smooth and buttery texture.</p>
-      <p class="price">$28</p>
-    </div>
-</main>
-<footer>
-  <p>© 2023 SMU Japan Produce Store. All rights reserved.</p>
-</footer>
-<div class="bio">
-  <h2>About SMU Japan Produce Store</h2>
-    <p>At SMU Japan Produce Store, we're dedicated to bringing the vibrant flavors and rich culinary heritage of Japan right to your doorstep. Our passion for quality and authenticity drives us to source the freshest and most exquisite Japanese food items, ensuring an unparalleled experience for every customer.</p>
-    <h2>Why Choose SMU Japan Produce Store?</h2>
-    <ol>
-      <li><strong>Uncompromising Quality:</strong> Our commitment to quality is non-negotiable. We handpick each item from trusted sources in Japan, ensuring that only the finest, freshest, and most flavorful products make their way to your table.</li>
-      <li><strong>Authenticity Guaranteed:</strong> Immerse yourself in the authentic tastes of Japan. Our selection ranges from traditional staples to unique delicacies, all carefully curated to offer an authentic culinary journey that transports you to the heart of Japan.</li>
-      <li><strong>Freshness Delivered:</strong> We take pride in providing you with the freshest ingredients available. Our products arrive at your doorstep in prime condition, preserving their natural flavors and textures.</li>
-      <li><strong>Expertise and Passion:</strong> Our team is made up of true food enthusiasts who are passionate about Japanese cuisine. We're here to answer your questions, offer cooking tips, and guide you in exploring the diverse world of Japanese gastronomy.</li>
-      <li><strong>Direct Imports:</strong> By importing directly from Japan, we eliminate unnecessary middlemen, ensuring competitive pricing without compromising on quality. Enjoy premium Japanese food items at affordable prices.</li>
-      <li><strong>Convenience Redefined:</strong> Say goodbye to the hassle of searching for authentic Japanese ingredients. With a simple click, you can access an extensive range of products that will elevate your culinary creations.</li>
-      <li><strong>Personalized Service:</strong> We prioritize your satisfaction. Reach out to us at any time for assistance, recommendations, or even a friendly chat about your favorite Japanese dishes.</li>
-    </ol>
-    <p><strong>Contact Us:</strong></p>
-    <p>Phone: +65 6969 6969</p>
-    <p>Email: eatmyjapanfoodbro@gmail.com</p>
-  </div>
+    <header>
+        <h1> Mamba's Sneakers</h1>
+        <nav>
+            <ul>
+                <li><a href="#">Home</a></li>
+                <li><a href="#">Shop</a></li>
+                <li><a href="#">About</a></li>
+                <li><a href="#">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+    
+    <main>
+        <section class="product">
+            <div class="product-box">
+                <img src="../Week 1 /kobe's/zoom kobe 6 protro 'grinch' 2020.jpg" alt="Sneaker">
+            </div>
+            <h2>Nike Zoom Kobe 6 Protro 'Grinch' 2020</h2>
+            <section class="price-section">
+                <p class="price">SGD1288.00</p>
+            </section>
+        </section>
+        
+    
+        <section class="product">
+            <div class="product-box">
+                <img src="../Week 1 /kobe's/UNDEFEATED x Nike Zoom Kobe 5 Protro 'What If Pack' Unlucky 13 .jpeg" alt="Sneaker">
+            </div>
+            <h2>Nike Zoom Kobe 5 Protro Unlucky 13</h2>
+            <section class="price-section">
+                <p class="price">SGD1149.00</p>
+            </section>
+        </section>
 
+        <section class="product">
+            <div class="product-box">
+                <img src="../Week 1 /kobe's/Nike Zoom Kobe 5 Protro 'Big Stage' 2020.jpeg" alt="Sneaker">
+            </div>
+            <h2>Nike Zoom Kobe 5 Protro 'Big Stage' 2020</h2>
+            <section class="price-section">
+                <p class="price">SGD619.00</p>
+            </section>
+        </section>
 
+        <section class="product">
+            <div class="product-box">
+                <img src="../Week 1 /kobe's/Nike Mamba Rage 'Bright Mango'.jpeg" alt="Sneaker">
+            </div>
+            <h2>Nike Mamba Rage 'Bright Mango'</h2>
+            <section class="price-section">
+                <p class="price">SGD755.00</p>
+            </section>
+        </section>
+
+        <section class="product">
+            <div class="product-box">
+                <img src="../Week 1 /kobe's/Nike Kobe A.D. 'Big Stage'.jpeg" alt="Sneaker">
+            </div>
+            <h2>Nike Kobe A.D. 'Big Stage'</h2>
+            <section class="price-section">
+                <p class="price">SGD978.00</p>
+            </section>
+        </section>
+
+        <section class="product">
+            <div class="product-box">
+                <img src="../Week 1 /kobe's/Nike Kobe A.D. Ruthless Precision.png" alt="Sneaker">
+            </div>
+            <h2>Nike Kobe A.D. Ruthless Precision</h2>
+            <section class="price-section">
+                <p class="price">SGD1072.00</p>
+            </section>
+        </section>
+
+        <section class="product">
+            <div class="product-box">
+                <img src="../Week 1 /kobe's/Nike Kobe 11 Elite Low 4KB.png" alt="Sneaker">
+            </div>
+            <h2>Nike Kobe 11 Elite Low 4KB</h2>
+            <section class="price-section">
+                <p class="price">SGD1435.00</p>
+            </section>
+        </section>
+
+        <section class="product">
+            <div class="product-box">
+                <img src="../Week 1 /kobe's/Nike Kobe 5 Protro 'Hall Of Fame'.png" alt="Sneaker">
+
+            </div>
+            <h2>Nike Kobe 5 Protro 'Hall Of Fame'</h2>
+            <section class="price-section">
+                <p class="price">SGD1228.00</p>
+            </section>
+        </section>
+
+    </main>
+
+    
+
+    <footer>
+        <p>&copy; 2023 Shoe Store. All rights reserved.</p>
+    </footer>
+
+    <script src="scripts.js"></script> <!-- Link to your JavaScript file -->
 </body>
 </html>
 
